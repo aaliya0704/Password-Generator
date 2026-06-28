@@ -9,8 +9,10 @@ def get_password_length():
 
 def generate_password(length):
     password = ""
+    characters = string.ascii_lowercase + string.ascii_uppercase
+
     for i in range(length):
-        password += random.choice(string.ascii_lowercase)
+        password += random.choice(characters)
     return password
 
 
