@@ -1,18 +1,30 @@
-def get_length():
-    pass_length = int(input("Enter the lenght for the password: "))
-    return pass_length
+import random
+import string
+
+
+def get_password_length():
+    length = int(input("Enter the length of the password: "))
+    return length
+
+
+def generate_password(length):
+    password = ""
+    for i in range(length):
+        password += random.choice(string.ascii_lowercase)
+    return password
 
 
 def main():
-    print("=" * 30)
-    print("Python password generator")
-    print("=" * 30)
+    print("=" * 40)
+    print("Python's Password Generator")
+    print("=" * 40)
+    print()
+    print("Generate your own password using python's password generator!")
 
-    print("Generate strong and secure passwords!")
+    password_length = get_password_length()
+    password = generate_password(password_length)
+    print("Your password is: ", password)
 
-
-password_length = get_length()
-print("Password length: ", password_length)
 
 if __name__ == "__main__":
     main()
