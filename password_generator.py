@@ -3,8 +3,12 @@ import string
 
 
 def get_password_length():
-    length = int(input("Enter the length of the password: "))
-    return length
+    while True:
+        length = int(input("Enter the length of the password: "))
+        if length > 0:
+            return length
+        else:
+            print("password length must be greater than 0.")
 
 
 def generate_password(length):
