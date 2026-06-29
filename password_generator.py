@@ -18,6 +18,13 @@ def generate_password(length):
 
     for i in range(length):
         password += random.choice(characters)
+
+    # shuffle password: converting string to list:
+    password_list = list(password)
+    # shuffling the list:
+    random.shuffle(password_list)
+    password = "".join(password_list)
+
     return password
 
 
