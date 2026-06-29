@@ -39,10 +39,39 @@ def main():
     print()
     print("Generate your own password using python's password generator!")
 
-    password_length = get_password_length()
-    password = generate_password(password_length)
-    print("Your password is: ", password)
+    while True:
+        # Keeps repeating the following code block until
+
+        # ask for password length:
+        password_length = get_password_length()
+
+        # generate password for the specified length:
+        password = generate_password(password_length)
+
+        # Display the generated password:
+        print("Your password is: ", password)
+
+        # Ask the user if thay want another password and store the user's choice
+        choice = input("Do you want to generate another password? (y/n): ")
+
+        # the user enters a letter
+        # if the user's letter is in uppercase convert it to lowercase -> compare the lowercased letter to "y" (which is meant for yes) -> if that letter == "y" -> continue
+        if choice.lower() == "y":
+            continue
+        else:
+            # if the user types "n" (which is meant for no) -> break the loop
+            print("Thank you for using python's password generator!")
+            break
 
 
 if __name__ == "__main__":
     main()
+
+# output:
+# Enter the length of the password: 6
+# Your password is:  8yX29<
+# Do you want to generate another password? (y/n): y
+# Enter the length of the password: 8
+# Your password is:  2k\pv!BW
+# Do you want to generate another password? (y/n): n
+# Thank you for using python's password generator!
